@@ -1,0 +1,12 @@
+Package: mhc
+Title: Functions and plotting for NSW Mental Health Commission
+Version: 0.0.0.9000
+Authors@R: person("Jonathan", "McGuire", email = "jonathan.mcguire@mhc.nsw.gov.au", role = c("aut", "cre"))
+Description: Convenience functions and ggplot templates for Commission
+    reporting.
+Depends:
+    R (>= 3.2.5)
+License: CC0
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
