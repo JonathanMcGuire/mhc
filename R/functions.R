@@ -63,9 +63,8 @@ if (!ticks) {
 
 #' Circular legend markers for ggplot line or bar charts
 #'
-#' This function removes standard item legends and adds circular legend items mapper to aes(color). Note that if a aes(fill) is also mapped, 'guide=FALSE' must be added to to scale_fill_XX.
+#' This function removes standard item legends and adds circular legend items mapper to aes(color). Note that if aes(fill) is also mapped, 'guide=FALSE' must be added to to scale_fill_XX.
 #' @param g A ggplot object. Defaults to g
-#' @export
 
 circularLegends <- function(g=g) {
   g <- g + geom_point(alpha = 0) +
