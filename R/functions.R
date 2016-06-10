@@ -1,5 +1,5 @@
 #' A smarter rounding function
-#' 
+#'
 #' This function rounds without truncating trailing zeros.
 #' @param digits Number of decimal places to round to. Defaults to 1.
 
@@ -21,7 +21,7 @@ smartRound <-
 
 
 #' A ggplot2 theme for the Commission
-#' 
+#'
 #' This function ensures all plots conform to the same standards
 #' @param ticks Include axis ticks. Defaults to TRUE.
 #' @param truncate Treat y axis as truncated (hide x axis line). Defaults to FALSE.
@@ -32,8 +32,8 @@ theme_mhc <- function(base_size = 11, base_family = "VAG", ticks = TRUE, truncat
   ret <- theme_bw(base_family = base_family, base_size = base_size) +
     theme(
       panel.border= element_blank(),
-      axis.line.x = element_line(color="black", size = .6), 
-      axis.line.y = element_line(color="black", size = .6), 
+      axis.line.x = element_line(color="black", size = .6),
+      axis.line.y = element_line(color="black", size = .6),
       panel.grid.major = element_line(colour = "grey50", size = 0.2),
       panel.grid.minor = element_blank(),
       panel.grid.major.x = element_blank(),
@@ -57,6 +57,23 @@ if (!ticks) {
   if (!yTitle) {
     ret <- ret + theme(axis.title.y = element_blank())
   }
-  
   ret
 }
+
+
+#' Circular legend markers for ggplot line or bar charts
+#'
+#' This function removes standard item legends and adds circular legend items mapper to aes(color). Note that if a aes(fill) is also mapped, 'guide=FALSE' must be added to to scale_fill_XX.
+#' @param g ggplot object. Defauls to g
+#' @export
+
+circularLegends <- function(g=g) {
+  g <- g + geom_point(alpha = 0) +
+    guides(colour = guide_legend(override.aes = list(size=4, linetype=0, alpha = 1)))
+  g
+}
+
+
+
+
+
