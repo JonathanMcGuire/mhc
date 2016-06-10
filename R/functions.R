@@ -2,7 +2,7 @@
 #'
 #' This function rounds without truncating trailing zeros.
 #' @param digits Number of decimal places to round to. Defaults to 1.
-
+#' @export
 smartRound <-
   function(x, digits=1) {
     if(digits < 1)
@@ -65,7 +65,7 @@ if (!ticks) {
 #'
 #' This function removes standard item legends and adds circular legend items mapper to aes(color). Note that if aes(fill) is also mapped, 'guide=FALSE' must be added to to scale_fill_XX.
 #' @param g A ggplot object. Defaults to g
-
+#' @export
 circularLegends <- function(g=g) {
   g <- g + geom_point(alpha = 0) +
     guides(colour = guide_legend(override.aes = list(size=4, linetype=0, alpha = 1)))
